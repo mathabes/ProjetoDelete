@@ -23,4 +23,11 @@ public class LivroDAO {
 		stmt.close();
 		return "Cadastrado com Sucesso";
 	}
+	public String deletar(Livro livro) throws SQLException {
+		PreparedStatement stmt = minhaConexao.prepareStatement("delete from T_FIAP_LIVRO where CODIGO = ?");
+		stmt.setInt(1, livro.getCodigo());
+		stmt.executeUpdate();
+		stmt.close();
+		return "Deletado com Sucesso!";
+	}
 }

@@ -12,16 +12,12 @@ public class TesteLivro {
         return JOptionPane.showInputDialog(message);
     }
 
-    // Método estático para receber uma entrada de int usando JOptionPane
     public static int inteiro(String message) {
-        String input = JOptionPane.showInputDialog(message);
-        return Integer.parseInt(input);
+        return Integer.parseInt(JOptionPane.showInputDialog(message));
     }
 
-    // Método estático para receber uma entrada de double usando JOptionPane
     public static double real(String message) {
-        String input = JOptionPane.showInputDialog(message);
-        return Double.parseDouble(input);
+        return Double.parseDouble(JOptionPane.showInputDialog(message));
     }
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
@@ -33,7 +29,5 @@ public class TesteLivro {
 		objL.setAutor(txt("Autor do livro"));
 		objL.setValor(real("Valor do livro"));
 		System.out.println(dao.inserir(objL));
-
 	}
-
 }
